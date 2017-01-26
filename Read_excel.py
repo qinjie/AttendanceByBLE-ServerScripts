@@ -310,7 +310,7 @@ def getXlsxData() :
     for folders, sub_folders, file in os.walk(directoryPath):
         for name in file :
             if name.endswith(".xlsx") :
-                filename = os.path.join(folders, "a_.xlsx")
+                filename = os.path.join(folders, name)
                 wb = openpyxl.load_workbook(filename, data_only=True)
                 return wb
 
@@ -1023,6 +1023,7 @@ def addVenue() :
             print('Aaaa')
 
 # Generate [StudentLeaveLesson] base on [Student_leave] table and [Lesson] table
+# tetsfdsf
 def getStudentLeaveLesson() :
     listStudentLeave = Student_leave.select()
     t = Timetable.select()
