@@ -150,6 +150,9 @@ class Semester_info(Model) :
     name = CharField(max_length=20)
     start_date = DateField()
     end_date = DateField()
+    break_start = DateField()
+    break_end = DateField()
+    status = IntegerField()
     created_at = DateTimeField(default=datetime.datetime.now())
     updated_at = DateTimeField(default=datetime.datetime.now())
 
@@ -310,7 +313,7 @@ def getXlsxData() :
     for folders, sub_folders, file in os.walk(directoryPath):
         for name in file :
             if name.endswith(".xlsx") :
-                filename = os.path.join(folders, name)
+                filename = os.path.join(folders, 'a_.xlsx')
                 wb = openpyxl.load_workbook(filename, data_only=True)
                 return wb
 
@@ -444,6 +447,7 @@ def updateStudent() :
 
 # Add new user into user table
 def addUser() :
+
     if (len(listUser) > 0):
         try:
             with db.atomic():
@@ -540,13 +544,14 @@ def updateLecturerUser() :
         auth_key = hash_object.hexdigest()
         listUser.append(
             {
-                'username' : email,
+                'username' : a['card'],
                 'auth_key' : auth_key,
                 'password_hash' : password,
                 'email' : email,
                 'name' : a['name'],
             }
         )
+
     addUser()
 
     _listUser = user.select()
@@ -573,7 +578,7 @@ def addLecturer() :
 
     validateLecturer()
     _listLecturer.clear()
-
+    # print(listLecturer)
     updateLecturerUser()
     if (len(listLecturer) > 0) :
         try :
@@ -855,12 +860,16 @@ def getSemesterdate():
 
     for a in semester_info:
         semester_id = a.id
+        if (a.status == 0) :
+            continue
         if (semester_id not in list_semester_id):
             start_date = a.start_date
             end_date = a.end_date
             week_num = 0;
             while start_date <= end_date:
                 tdate = start_date;
+                if ((a.break_start <= tdate) and (tdate <= a.break_end)) :
+                    continue
                 weekday = tdate.isoweekday()
                 week_num += (weekday == 1)
                 start_date += datetime.timedelta(days=1)
@@ -1133,15 +1142,15 @@ if __name__ == '__main__' :
     getStudentTable()
     getLecturerTable()
     importVenue()
-    importStudent()
+    # importStudent()
     importLecturer()
-    generateSemesterdate()
-    importLesson()
-    generateLessondate()
-    generateBeaconUser()
-    generateBeaconLesson()
-    importLessonLecturer()
-    importTimetable()
-    importAttendance()
-    generateStudentLeaveLesson()
+    # generateSemesterdate()
+    # importLesson()
+    # generateLessondate()
+    # generateBeaconUser()
+    # generateBeaconLesson()
+    # importLessonLecturer()
+    # importTimetable()
+    # importAttendance()
+    # generateStudentLeaveLesson()
     print('Finish')
