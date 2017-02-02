@@ -1,0 +1,165 @@
+{
+      "user" : {
+          "username": "username",
+          "auth_key": "auth_key",
+          "device_hash": "device_hash",
+          "password_hash": "password_hash",
+          "email": "email",
+          "profileImg" : "profileImg",
+          "status" : "status",
+          "role" : "role",
+          "name" : "name",
+          "face_id" : "face_id",
+          "person_id" : "person_id",
+          "created_at" : "created_at",
+          "updated_at" : "updated_at"
+        },
+      "Student": {
+          "card": "card",
+          "name": "name",
+          "acad": "acad",
+          "user": "user",
+          "created_at" : "created_at",
+          "updated_at" : "updated_at",
+          "disable" : "disable"
+        },
+      "Lecturer": {
+          "card": "card",
+          "name": "name",
+          "acad": "acad",
+          "email" : "email",
+          "user": "user",
+          "created_at" : "created_at",
+          "updated_at" : "updated_at",
+          "disable" : "disable"
+        },
+      "venue": {
+          "location": "location",
+          "name": "name",
+          "uuid": "uuid",
+          "major" : "major",
+          "minor": "minor",
+          "created_at" : "created_at",
+          "updated_at" : "updated_at"
+        },
+      "Lesson" : {
+          "semester": "semester",
+          "module_id": "module_id",
+          "subject_area": "subject_area",
+          "catalog_number": "catalog_number",
+          "class_section": "class_section",
+          "component" : "component",
+          "facility" : "facility",
+          "venue" : "venue",
+          "weekday" : "weekday",
+          "start_time" : "start_time",
+          "end_time" : "end_time",
+          "meeting_pattern" : "meeting_pattern",
+          "created_at" : "created_at",
+          "updated_at" : "updated_at"
+        },
+      "Lesson_lecturer": {
+          "lesson": "lesson",
+          "lecturer": "lecturer",
+          "created_at" : "created_at",
+          "updated_at" : "updated_at"
+        },
+      "Timetable": {
+          "lesson": "lesson",
+          "student": "student",
+          "created_at" : "created_at",
+          "updated_at" : "updated_at"
+        },
+      "Lesson_date": {
+          "lesson": "lesson",
+          "ldate": "ldate",
+          "updated_by" : "updated_by",
+          "created_at" : "created_at",
+          "updated_at" : "updated_at"
+        },
+      "Attendance": {
+          "student": "student",
+          "lesson_date": "lesson_date",
+          "recorded_time": "recorded_time",
+          "lecturer" : "lecturer",
+          "status": "status",
+          "created_at" : "created_at",
+          "updated_at" : "updated_at"
+        },
+      "Semester_info": {
+          "name": "name",
+          "start_date": "start_date",
+          "end_date": "end_date",
+          "break_start" : "break_start",
+          "break_end": "break_end",
+          "status" : "status",
+          "created_at" : "created_at",
+          "updated_at" : "updated_at"
+        },
+      "Semester_date": {
+          "semester": "semester",
+          "tdate": "tdate",
+          "week_num": "week_num",
+          "weekday" : "weekday",
+          "is_holiday": "is_holiday",
+          "created_at" : "created_at",
+          "updated_at" : "updated_at"
+        },
+      "Beacon_leson": {
+          "lesson": "lesson",
+          "uuid": "uuid",
+          "created_at" : "created_at",
+          "updated_at" : "updated_at"
+        },
+      "Public_holiday": {
+          "year": "year",
+          "name": "name",
+          "hdate": "hdate",
+          "created_at" : "created_at",
+          "updated_at" : "updated_at"
+        },
+      "Beacon_attendance_lecturer": {
+          "lesson_date": "lesson_date",
+          "student": "student",
+          "lecturer": "lecturer",
+          "status" : "status",
+          "created_at" : "created_at"
+        },
+      "Beacon_attendance_student": {
+          "lesson_date": "lesson_date",
+          "student_id_1": "student",
+          "status" : "status",
+          "created_at" : "created_at"
+        },
+      "Beacon_user": {
+          "user": "user",
+          "major": "major",
+          "minor" : "minor",
+          "created_at" : "created_at",
+          "updated_at" : "updated_at"
+        },
+      "Student_leave": {
+          "student": "student",
+          "start_date": "start_date",
+          "end_date": "end_date",
+          "remark" : "remark",
+          "status": "status",
+          "created_at" : "created_at",
+          "updated_at" : "updated_at"
+        },
+      "Student_leave_lesson": {
+          "student": "student",
+          "lesson_date": "lesson_date",
+          "created_at" : "created_at"
+        },
+      "User_token": {
+          "user": "user",
+          "token": "token",
+          "title": "title",
+          "ip_address" : "ip_address",
+          "expire_date": "expire_date",
+          "action" : "action",
+          "created_at" : "created_at",
+          "updated_at" : "updated_at"
+        }
+}
