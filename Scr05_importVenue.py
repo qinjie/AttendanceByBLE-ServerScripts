@@ -21,6 +21,23 @@ def getVenue() :
 
 # Add venue list to database and reject data if it exist
 def addVenue() :
+    lVn = venue.select()
+    l = []
+    for a in lVn :
+        t = a.uuid + " " + str(a.major) + " " + str(a.minor)
+        if (t not in l) :
+            l.append(t)
+
+    # _listVenue = []
+    # for a in listVenue:
+    #     t = a['uuid'] + " " + str(a['major']) + " " + str(a['minor'])
+    #     if (t not in l ) :
+    #         _listVenue.append(a)
+    #
+    # listVenue.clear()
+    # for a in _listVenue :
+    #     listVenue.append(a)
+    # print(listVenue)
     if (len(listVenue) > 0):
         try:
             with db.atomic():
